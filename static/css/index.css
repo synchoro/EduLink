@@ -1,0 +1,591 @@
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background: none; /* 移除原有背景图 */
+    z-index: 0; /* 确保伪元素不会遮挡其他内容 */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/background2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8; /* 设置背景透明度 */
+    z-index: -1; /* 让背景图位于内容下方 */
+    pointer-events: none; /* 确保背景图不会干扰用户操作 */
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.left {
+    float: left;
+    width: 18vw;
+    height: 100vh;
+    /* background-color: #fdfdff; */
+    font-family: 'Kiwi Maru';
+}
+
+.right {
+    float: right;
+    width: 1136px;
+    height: 100vh;
+    background-color: rgba(240, 241, 244)
+
+
+}
+
+.right .top {
+    float: left;
+    margin-left: 40px;
+    margin-top: 49px;
+    width: 1058px;
+    height: 100px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 13px 0px rgba(173, 173, 173, 0.31);
+    border-radius: 6px;
+}
+
+.right .top .tool {
+    margin: 17px;
+    width: 1024px;
+    padding: 19px 0 0 19px;
+    height: 66px;
+    border-radius: 4px;
+    border: solid 1px #eaeaea;
+}
+
+.right .top .tool .class-info {
+    float: left;
+}
+
+.right .top .tool .class-info span {
+    margin-right: 12px;
+    font-size: 12px;
+    color: #505359;
+}
+
+.right .top .tool .class-info select {
+    margin-right: 45px;
+    width: 175px;
+    height: 27px;
+    border-radius: 4px;
+    border: solid 1px #dbdbdb;
+    font-size: 12px;
+    color: #505359;
+}
+
+.right .top .tool .class-info input[type="text"] {
+    width: 120px;
+    height: 27px;
+    border-radius: 4px;
+    border: solid 1px #dbdbdb;
+}
+
+.grade_input{
+    width: 200px!important;
+}
+
+.right .top .tool .class-info input[type="submit"] {
+    margin-left: 9px;
+    width: 50px;
+    height: 27px;
+    background-color: #4286ef;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.right .top .tool .class-info input[type="submit"]:active {
+    background-color: #2966c2;
+}
+
+.right .top .tool .actions {
+    float: right;
+    margin-right: 10px;
+}
+
+.right .top .tool .actions::before {
+    content: '|';
+    color: #dbdbdb;
+
+}
+
+button.export {
+    margin-left: 15px;
+    width: 100px;
+    height: 27px;
+    background-color: #febb48;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+
+}
+
+button.export:active {
+    background-color: #c18929;
+}
+
+button.import {
+    margin-left: 15px;
+    width: 90px;
+    height: 27px;
+    background-color: #27c850;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+button.import:active {
+    background-color: #189136;
+}
+
+/* 新增 */
+
+button.add {
+    margin-left: 8px;
+    width: 80px;
+    height: 27px;
+    background-color: #b184f1;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+button.add_short {
+    margin-left: 8px;
+    width: 50px;
+    height: 27px;
+    background-color: #b184f1;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+
+button.del {
+    margin-left: 15px;
+    width: 80px;
+    height: 27px;
+    background-color: #ea423c;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+button.del:active {
+    background-color: #c72c26;
+}
+
+.right .bottom {
+    float: left;
+    margin-left: 40px;
+    margin-top: 27px;
+    width: 1058px;
+    height: 551px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 13px 0px rgba(173, 173, 173, 0.31);
+    border-radius: 6px;
+}
+
+.right .bottom table {
+    margin-top: 18px;
+    margin-left: 18px;
+    border-collapse: collapse;
+    width: 1027px;
+    /* border-radius: 10px; */
+    overflow: hidden;
+}
+
+
+.right .bottom table th {
+    position: relative;
+    padding: 10px;
+    text-align: left;
+
+    height: 48px;
+    background-color: #fbfbfb;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 16px;
+    color: #3a454f;
+
+}
+
+.right .bottom table th::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    background-color: #eaeaea;
+    transform: translateY(-50%);
+}
+
+/* 设置第一个表头单元格的左侧边框 */
+.right .bottom table th:first-child,
+.right .bottom table td:first-child {
+    text-align: center;
+}
+
+.right .bottom table th:first-child::before {
+    display: none;
+}
+
+.right .bottom table td {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #53565b;
+}
+
+/* 设置偶数行的背景色 */
+.right .bottom table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.right .bottom table td .edit,
+.right .bottom table td .delete {
+    padding-left: 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #27c850;
+    background-color: transparent;
+
+}
+
+
+.pagination {
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    padding: 15px;
+    height: 25px;
+}
+
+.pagination .info {
+    display: block;
+    float: left;
+    padding-top: 3px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #53565b;
+}
+
+.pagination .page {
+    float: left;
+}
+
+.pagination button {
+    padding: 5px 5px;
+    margin: 2px;
+    color: #53565b;
+    border: none;
+    background-color: transparent;
+}
+
+.pagination .page::before {
+    content: '<';
+    font-size: 16px;
+    color: rgb(207, 207, 207);
+}
+
+.pagination .page::after {
+    content: '>';
+    font-size: 16px;
+    color: grey;
+}
+
+
+
+.pagination .active {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    margin: 2px;
+    border-radius: 4px;
+
+}
+
+/* 侧边栏 */
+.left {
+    width: 18vw;
+    height: 100wh;
+    /* background-color: #fdfdff; */
+    font-weight: 500;
+}
+
+.left .head {
+    position: relative;
+    float: left;
+
+    width: 211px;
+    height: 82px;
+    margin-left: 20px;
+    /* background-image: url(../images/titlelogo.png); */
+    margin-top: 50px;
+}
+
+.left .head h2 {
+    display: block;
+    position: absolute;
+    left: 34px;
+    top: 27px;
+    font-size: 22px;
+    font-weight: 600;
+    /* color: #464646; */
+    color: #fff;
+}
+
+.left .profile{
+    margin-left: 10px;
+}
+
+.left .content {
+    float: left;
+    margin-top: 20px;
+    margin-left: 18px;
+
+}
+/* .left .content li:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 3px;
+    height: 60%;
+    transform: translateY(-50%);
+    background-color: #787dfe;
+    display: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.left .content li:hover:before {
+    display: block;
+} */
+
+.left .content li {
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 52px;
+    margin-left: 4px;
+}
+
+
+.left .content li span,
+.left .user li span {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    /* color: #a3acb9; */
+    color: #fff;
+    transition:color 0.4s ease-in-out;
+}
+
+.left .content li a,
+.left .user li a {
+    display: inline-block;
+    margin-left: 18px;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 2px;
+    /* color: #a3acb9; */
+    color: #fff;
+    cursor: pointer;
+    transition:color 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.left .content li:hover span,
+.left .content li:hover a {
+    color:#787dfe;
+    z-index: 1;
+}
+
+.left .content li.active span,
+.left .content li.active a {
+    color:#787dfe;
+    z-index: 1;
+}
+
+.left .content li:hover {
+    position: relative;
+}
+
+.left .content li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding: 8px 0;
+    transform: translateY(-50%) scaleX(0); /* 初始缩放为 0 */
+    width: 140%;
+    height: 100%;
+    background: rgba(240, 241, 244); /* 默认背景色 */
+    border-radius: 25px; /* 圆角效果 */
+    z-index: -1; /* 背景在文字后面 */
+    transition: transform 0.4s ease-in-out, border-radius 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.left .content li:hover::before {
+    transform: translateY(-50%) scaleX(1); /* 放大到 100% */
+    background: rgba(240, 241, 244); /* 背景颜色保持一致 */
+    border-radius: 25px; /* 圆角效果保持一致 */
+}
+
+.left .content li.active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding: 8px 0;
+    transform: translateY(-50%) scaleX(0); /* 初始缩放为 0 */
+    width: 140%;
+    height: 100%;
+    background: rgba(240, 241, 244); /* 默认背景色 */
+    border-radius: 25px; /* 圆角效果 */
+    z-index: -1; /* 背景在文字后面 */
+    transition: transform 0.4s ease-in-out, border-radius 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.left .content li.active::before {
+    transform: translateY(-50%) scaleX(1); /* 放大到 100% */
+    background: rgba(240, 241, 244); /* 背景颜色保持一致 */
+    border-radius: 25px; /* 圆角效果保持一致 */
+}
+
+.btn-danger {
+    color: #f97e31;
+}
+
+
+.password-change {
+    background-image: url(../images/password.jpg);
+    float: right;
+    width: 1145px;
+    /* height: 768px; */
+    margin: 0; 
+    height: 100vh; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    font-family: 'Kiwi Maru';
+    
+}
+
+.password-change-form {
+    margin-top: 180px;
+    margin-left: 218px;
+}
+
+
+.password-change-form h2 {
+
+    margin-bottom: 35px;
+    font-weight: 700;
+    font-size: 32px;
+    /* color: #182235; */
+    color: #fff;
+    margin-left: 56px;
+    text-shadow: 2px 2px 3px rgba(64, 64, 64, 0.5); 
+}
+
+.password-change-form .form-group {
+    margin-top: 19px;
+
+}
+
+.password-change-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    margin-left: 14px;
+    text-shadow: 1px 1px 2px rgba(64, 64, 64, 0.5); 
+    /* color: #67788d; */
+    color: #fff;
+}
+
+.password-change-form .form-group input {
+    width: 353px;
+    height: 40px;
+    border: solid 1px #b3b3b3;
+    border-radius: 20px;
+    padding: 0 10px; 
+    font-size: 14px;
+    outline: none; 
+    opacity: 0.6; 
+}
+.password-change-form .form-group input:hover{
+    border: solid 1px #787dfe;
+    background-color: rgba(120, 125, 254, 0.2); 
+}
+
+.password-change-form button {
+    margin-top: 34px;
+    width: 353px;
+    height: 54px;
+    background-color: #787dfe;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: opacity 0.4s ease-in-out;
+    font-family: 'Kiwi Maru';
+    font-weight: 500;
+}
+
+.password-change-form button:hover {
+    opacity: 0.7;
+}
+
+.password-change-form .form-group input:hover {
+    border: solid 1px #787dfe;
+}
+
+.profile {
+    position: relative;
+    float: left;
+    width: 100%; 
+    text-align: center; 
+    color:#fff;
+    margin: 20px 0
+}
