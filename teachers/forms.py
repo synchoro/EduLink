@@ -27,18 +27,18 @@ class TeacherForm(forms.ModelForm):
     def clean_phone_number(self):
         phone_number = self.cleaned_data.get('phone_number')
         
-        # 去除所有非数字字符（包括 "-"）
+        # すべての非数字文字（"-" を含む）を削除
         raw_phone_number = re.sub(r'\D', '', phone_number)
 
-        # 验证电话号码格式是否符合要求（不带连字符的格式）
+        # 電話番号の形式が正しいか検証（ハイフンなしの形式）
         if not re.match(r"^(070|080|090)\d{8}$", raw_phone_number):
             raise ValidationError('電話番号の形式が正しくありません。<br>正しい形式: 09012345678 または 090-1234-5678')
 
-        # 检查是否已经存在相同的电话号码（无论是否带 `-`）
+        # 同じ電話番号が既に存在するかを確認（"-" の有無を問わず）
         if Teacher.objects.filter(phone_number=raw_phone_number).exclude(pk=self.instance.pk).exists():
             raise ValidationError("この電話番号を持つ教師情報は既に存在します。")
 
-        # 将电话号码存储为无 `-` 的格式
+        # 電話番号を "-" なしの形式で保存
         return raw_phone_number
 
     

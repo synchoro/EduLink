@@ -19,11 +19,11 @@ class Teacher(models.Model):
     grade = models.OneToOneField(Grade, on_delete=models.DO_NOTHING, verbose_name='担当クラス')
 
     def clean_phone_number(self):
-        """Remove '-' from the phone number for internal use"""
+        """電話番号から '-' を削除"""
         return self.phone_number.replace("-", "")
     
     def get_formatted_phone_number(self):
-        """格式化电话号码为带 `-` 的形式"""
+        """電話番号を - を含む形式に"""
         phone_number = self.phone_number.replace("-", "")
         return f"{phone_number[:3]}-{phone_number[3:7]}-{phone_number[7:]}"
 

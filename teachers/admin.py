@@ -25,7 +25,7 @@ class TeacherAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
     def formatted_phone_number(self, obj):
-        """格式化电话号码以显示带有 `-`"""
+        """電話番号を - を含む形式に"""
         phone_number = obj.phone_number.replace("-", "")
         return f"{phone_number[:3]}-{phone_number[3:7]}-{phone_number[7:]}"
     formatted_phone_number.short_description = "電話番号"
